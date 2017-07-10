@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-6">
+        <p style="font-size:35px">
+            {{minutes}}:{{seconds}}
+        </p>
+  </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="btn-group" role="group">
+            <button class="btn-default" (click)="increaseTimer()">+</button>
+            <button class="btn-default" (click)="decreaseTimer()">-</button>
+            <button class="btn-default" (click)="startTimer()">Start</button>
+            <button class="btn-default" (click)="stopTimer()">Stop</button>
+            <button class="btn-default" (click)="resetTimer()">Reset</button>
+        </div> 
+  </div>
+</div>
+

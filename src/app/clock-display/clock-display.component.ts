@@ -7,22 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockDisplayComponent implements OnInit {
   
-   timer: number;  
-   time: number;
+ time: number;
 
   constructor() {
-    this.time = Date.now();
-    this.initializeTimer();
-    this.runTimer();
+   
   }
 
-  initializeTimer (){
-    this.timer = 20;
-  }
-
-  runTimer(){
-    setInterval(()=>{ this.timer -= 1 },1000);
-  }
+ 
 
   ngOnInit() {
   }

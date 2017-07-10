@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ClockDisplayComponent } from './clock-display/clock-display.component';
+import { TimerComponent } from './timer/timer.component';
+import { TaskComponent } from './task/task.component';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClockDisplayComponent
+    ClockDisplayComponent,
+    TimerComponent,
+    TaskComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule
