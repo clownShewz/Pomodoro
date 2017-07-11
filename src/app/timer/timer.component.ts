@@ -31,8 +31,14 @@ export class TimerComponent implements OnInit {
   startTimer(){    
     this.timerIntervalId = setInterval(()=>{ 
        this.timer -= 1000;
-       this.minutes = Math.floor((this.timer % (1000 * 60 * 60)) / (1000 * 60));
+        let minutes = Math.floor((this.timer % (1000 * 60 * 60)) / (1000 * 60));
        
+       if(minutes >= 10){
+          this.minutes = minutes;
+       } else{
+          this.minutes = "0" + minutes; //TODO make this a pipe 
+       }
+
        let seconds =  Math.floor((this.timer % (1000 * 60)) / 1000);
 
        if(seconds >= 10){
