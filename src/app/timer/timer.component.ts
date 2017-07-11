@@ -24,28 +24,15 @@ export class TimerComponent implements OnInit {
     this.timer = new Date();
     this.timer.setMinutes(this.timerInitialValue);
     this.timer.setSeconds(0);
-    this.minutes = this.timer.getMinutes();
+    this.minutes = this.formatTime(this.timer.getMinutes());
     this.seconds = this.timer.getSeconds() + "0";
   }
 
   startTimer(){    
     this.timerIntervalId = setInterval(()=>{ 
        this.timer -= 1000;
-        let minutes = Math.floor((this.timer % (1000 * 60 * 60)) / (1000 * 60));
-       
-       if(minutes >= 10){
-          this.minutes = minutes;
-       } else{
-          this.minutes = "0" + minutes; //TODO make this a pipe 
-       }
-
-       let seconds =  Math.floor((this.timer % (1000 * 60)) / 1000);
-
-       if(seconds >= 10){
-          this.seconds = seconds;
-       } else{
-          this.seconds = "0" + seconds; //TODO make this a pipe 
-       }
+      this.minutes = this.formatTime(Math.floor((this.timer % (1000 * 60 * 60)) / (1000 * 60)));
+       this.seconds =  this.formatTime(Math.floor((this.timer % (1000 * 60)) / 1000));
       },1000);
 
 
@@ -69,6 +56,14 @@ export class TimerComponent implements OnInit {
 
     resetTimer(){
      this.initializeTimer();
+  }
+
+  formatTime(value:number){
+     if(value >= 10){
+       return value;
+     } else {
+       return "0" + value;
+     }
   }
 
   ngOnInit() {
