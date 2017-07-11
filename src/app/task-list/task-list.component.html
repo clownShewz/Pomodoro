@@ -1,15 +1,19 @@
 <div class="row">
   <div class="col-lg-6">
-      {{task}} 
   </div>
 </div>
 <div class="row">
-   <div class="col-lg-6">
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Enter new task...">
+        <input #newTask (keyup.enter)="addTask(newTask.value)" (blur)="addTask(newTask.value); newTask.value =''" 
+            type="text" class="form-control" placeholder="Enter new task...">
         <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Add</button>
+            <button class="btn btn-default" type="button" (click)="addTask(newTask.value)">Add</button>
           </span>
         </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
+<div class="row">
+   <div class="card">
+     <ul class="list-group list-group-flush">
+           <app-task  *ngFor="let task of taskList" [task] = task></app-task>
+      </ul>
+  </div>

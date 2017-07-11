@@ -16,7 +16,7 @@ export class TimerComponent implements OnInit {
   maxValue: number = 60;
 
   constructor() { 
-    this.timerInitialValue = 20;
+    this.timerInitialValue = 45;
     this.initializeTimer();
   }
 

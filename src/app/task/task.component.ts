@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { task } from './models/task';
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.css']
+  styleUrls: ['./task.component.css'],
+  host:{
+    class:"list-group-item"
+  }
 })
 export class TaskComponent implements OnInit {
-  taskName : string;
-  timeSpentOnTask : number;
+  @Input()
+  task: task;
 
-  constructor(name:string) {
-      this.taskName = name;
+  constructor() {
+
    }
 
 
   setTimeSpent(time : number){
-      this.timeSpentOnTask = time;
+      this.task.setTimeSpent(time);
   }
 
   ngOnInit() {
