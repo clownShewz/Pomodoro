@@ -4,7 +4,7 @@
 </div>
 <div class="row">
     <div class="input-group">
-        <input #newTask (keyup.enter)="addTask(newTask.value)" (blur)="addTask(newTask.value); newTask.value =''" 
+        <input #newTask (keyup.enter)="addTask(newTask.value); newTask.value=''" (blur)="addTask(newTask.value); newTask.value =''" 
             type="text" class="form-control" placeholder="Enter new task...">
         <span class="input-group-btn">
             <button class="btn btn-default" type="button" (click)="addTask(newTask.value)">Add</button>

@@ -9,6 +9,7 @@ import { task } from '../task/models/task';
 export class TaskListComponent implements OnInit {
   
   taskList=[];
+  
 
   constructor() { 
 
@@ -19,6 +20,13 @@ export class TaskListComponent implements OnInit {
     this.taskList.push(new task(name))
     }
   }
+
+  removeFromList(task: task){
+        let taskToDelete = this.taskList.filter((tsk)=>{ return  tsk.Id === task.taskId;});
+        let idx = this.taskList.indexOf(taskToDelete);
+        this.taskList = this.taskList.slice(idx, idx+1);
+
+    }
 
   ngOnInit() {
   }

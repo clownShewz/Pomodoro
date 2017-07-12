@@ -1,11 +1,20 @@
 <div class="row">
-  <div class="col-lg-6">
+    <div class="col-lg-4">
+        <div class="btn-group">
+            <button #taskComplete class="btn btn-success btn-sm" (click)="setTimeSpent()"> Complete</button>
+            <button class="btn btn-danger btn-sm">Delete </button>
+        </div>
+</div>
+  <div class="col-lg-2">
       {{task.taskName}} 
   </div>
-   <div class="col-lg-3">
-      {{task.taskTime}}
+   <div class="col-lg-2">
+      {{task.taskStartTime | date: 'shortTime' }} 
+  </div>
+   <div class="col-lg-2">
+      {{task.taskEndTime |  date: 'shortTime'}} 
+  </div>
+   <div class="col-lg-2">
+      {{task.timeSpent}}
     </div><!-- /.col-lg-6 -->
-    <div class="col-lg-3">
-        <input type="checkbox" #taskComplete/>
-    </div>
 </div><!-- /.row -->

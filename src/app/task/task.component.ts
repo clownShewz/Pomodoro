@@ -14,13 +14,12 @@ export class TaskComponent implements OnInit {
   task: task;
 
   constructor() {
-
+     
    }
-
-
-  setTimeSpent(time : number){
-      this.task.setTimeSpent(time);
-  }
+   
+   setTimeSpent(){
+     this.task.setTimeSpent();
+   }
 
   ngOnInit() {
   }
